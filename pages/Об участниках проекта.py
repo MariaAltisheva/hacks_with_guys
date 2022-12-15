@@ -5,7 +5,7 @@ from main import add_bg_from_local
 st.title("Об участниках проекта")
 st.write("**Акопян Артём**")
 st.write("- Капитан и избранный лидер команды. Выпускник МАИ, Академии Больших Данных ВК. В данный момент работает ML-инженером в Авито")
-st.write("- tg: @akopian_artem")
+st.write("- tg: @akopian_artem моб. +7(915)4464759 e-mail: akopian.artyom@gmail.com")
 
 
 st.write("**Наумов Констрантин**")
@@ -15,6 +15,6 @@ st.write("- tg: @Kotyannnn, моб. +7(950)627-29-39")
 
 st.write("**Алтышева Мария**")
 st.write("- Выпускник МИСИС, аспирант университета Росноу по направлению 'искусственный интеллект и машинное обучение'. Преподает программу 'Код будущего: программирование на python' в университетах Синергия и Иннополис")
-st.write("- tg: @Altishmari, моб. +7(916)151-72-84, vk: https://vk.com/altyshevamaria")
+st.write("- tg: @Altishmari, моб. +7(916)151-72-84, vk: https://vk.com/altyshevamaria, e-mail: altysheva_maria@mail.ru")
 
 add_bg_from_local('light.png')
