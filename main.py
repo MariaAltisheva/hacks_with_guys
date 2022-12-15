@@ -9,6 +9,7 @@ import plotly.express as px
 from urllib.request import urlopen
 import json
 from PIL import Image
+from pathlib import Path
 
 
 # Настройка заголовка и текста
@@ -19,11 +20,25 @@ st.write("""Проект разработан командой участник�
 # Настройка боковой панели
 st.sidebar.title("Крисмас-тим")
 
+
+
+st.title("Загрузка документа для распознавания")
+# st.image(res, width = 800)
+
+st.markdown("**Пожалуйста, загрузите документ в формате doc или pdf в данную форму:**")
+with st.form(key="Form :", clear_on_submit=True):
+    File = st.file_uploader(label="орма для распознавания документов в формате pdf, doc, jpeg, jpg, png'", type=["pdf", "docx", "jpeg", "jpg", "png"])
+    Recognize = st.form_submit_button(label='Распознать')
+
+
+if Recognize:
+    st.markdown("**Файл успешно загружен**")
+
 def load_image():
     """Создание формы для загрузки изображения"""
-    upload_file = st.file_uploader(label='Выберите изображение для распознавания')
-    if upload_file is not None:
-        image_data = upload_file.getvalue()
+    # upload_file = st.file_uploader(label='Форма для распознавания документов в формате jpeg, jpg, png')
+    if File is not None:
+        image_data = File.getvalue()
         # Показ загруженного изображения
         st.image(image_data)
         # Возврат ихображения в формате PIL
