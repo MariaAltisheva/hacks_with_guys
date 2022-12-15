@@ -1,5 +1,6 @@
 import streamlit as st
 
+from main import add_bg_from_local
 
 st.title("Об участниках проекта")
 st.write("**Акопян Артём**")
@@ -15,3 +16,5 @@ st.write("- tg: @Kotyannnn, моб. +7(950)627-29-39")
 st.write("**Алтышева Мария**")
 st.write("- Выпускник МИСИС, аспирант университета Росноу по направлению 'искусственный интеллект и машинное обучение'. Преподает программу 'Код будущего: программирование на python' в университетах Синергия и Иннополис")
 st.write("- tg: @Altishmari, моб. +7(916)151-72-84, vk: https://vk.com/altyshevamaria")
+
+add_bg_from_local('light.png')
