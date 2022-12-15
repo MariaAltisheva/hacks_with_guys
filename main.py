@@ -25,14 +25,17 @@ st.sidebar.title("Крисмас-тим")
 st.title("Загрузка документа для распознавания")
 # st.image(res, width = 800)
 
-st.markdown("**Пожалуйста, загрузите документ в формате doc или pdf в данную форму:**")
+st.markdown("**Пожалуйста, загрузите документ в формате doc, jpg или pdf в данную форму:**")
 with st.form(key="Form :", clear_on_submit=True):
-    File = st.file_uploader(label="орма для распознавания документов в формате pdf, doc, jpeg, jpg, png'", type=["pdf", "docx", "jpeg", "jpg", "png"])
-    Recognize = st.form_submit_button(label='Распознать')
+    File = st.file_uploader(label="Форма для распознавания документов в формате pdf, doc, jpeg, jpg, png", type=["pdf", "docx", "jpeg", "jpg", "png"])
+    Recognize = st.form_submit_button(label='Загрузить')
 
 
 if Recognize:
     st.markdown("**Файл успешно загружен**")
+
+
+
 
 def load_image():
     """Создание формы для загрузки изображения"""
