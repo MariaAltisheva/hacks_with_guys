@@ -9,7 +9,7 @@ from urllib.request import urlopen
 import json
 from PIL import Image
 from pathlib import Path
-from utils import  *
+# from utils import *
 
 
 # Настройка заголовка и текста
