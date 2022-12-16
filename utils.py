@@ -3,6 +3,8 @@ import os
 from typing import List, Tuple
 # import docx
 import pandas as pd
+import easyocr
+
 
 from pdf2image import convert_from_path
 def get_file_properties(fp: str) -> Tuple[float, str, str]:
@@ -32,17 +34,17 @@ def get_file_properties(fp: str) -> Tuple[float, str, str]:
 #     return '\n'.join(full_text)
 #
 #
-# def pdf_text(fp: str, reader: easyocr.Reader) -> str:
-#     """
-#     конвертирует файл pdf в текст
-#     :param fp: путь до конвертируемого файла
-#     :param reader: вспомогательный файл из библиотеки easyocr
-#     :return: текст
-#     """
-#     images = convert_from_path(fp)
-#     full_text = []
-#     for image in images:
-#         image.save('buffer.jpg')
-#         result = reader.readtext('buffer.jpg', detail=0)
-#         full_text.append(' '.join(result))
-#     return '\n'.join(full_text)
+def pdf_text(fp: str, reader: easyocr.Reader) -> str:
+    """
+    конвертирует файл pdf в текст
+    :param fp: путь до конвертируемого файла
+    :param reader: вспомогательный файл из библиотеки easyocr
+    :return: текст
+    """
+    images = convert_from_path(fp)
+    full_text = []
+    for image in images:
+        image.save('buffer.jpg')
+        result = reader.readtext('buffer.jpg', detail=0)
+        full_text.append(' '.join(result))
+    return '\n'.join(full_text)

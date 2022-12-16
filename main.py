@@ -41,20 +41,20 @@ if Recognize:
     if save_path.exists():
         st.success(f'File {File.name} is successfully saved!')
 
-def load_image():
-    """Создание формы для загрузки изображения"""
-    # upload_file = st.file_uploader(label='Форма для распознавания документов в формате jpeg, jpg, png')
-    if File is not None:
-        image_data = File.getvalue()
-        # Показ загруженного изображения
-        st.image(image_data)
-        # Возврат ихображения в формате PIL
-        return Image.open(io.BytesIO(image_data))
-    else:
-        return None
+# def load_image():
+#     """Создание формы для загрузки изображения"""
+#     # upload_file = st.file_uploader(label='Форма для распознавания документов в формате jpeg, jpg, png')
+#     if File is not None:
+#         image_data = File.getvalue()
+#         # Показ загруженного изображения
+#         st.image(image_data)
+#         # Возврат ихображения в формате PIL
+#         return Image.open(io.BytesIO(image_data))
+#     else:
+#         return None
 
 # форма загрузки изображения
-img = load_image()
+# img = load_image()
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
