@@ -1,7 +1,6 @@
 import base64
 import io
 from io import StringIO
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -10,6 +9,7 @@ from urllib.request import urlopen
 import json
 from PIL import Image
 from pathlib import Path
+from utils import  *
 
 
 # Настройка заголовка и текста
@@ -19,8 +19,6 @@ st.write("""Проект разработан командой участник�
 
 # Настройка боковой панели
 st.sidebar.title("Крисмас-тим")
-
-
 
 st.title("Загрузка документа для распознавания")
 # st.image(res, width = 800)
@@ -34,8 +32,14 @@ with st.form(key="Form :", clear_on_submit=True):
 if Recognize:
     st.markdown("**Файл успешно загружен**")
 
+    # Save uploaded file to 'F:/tmp' folder.
+    save_folder = 'datas'
+    save_path = Path(save_folder, File.name)
+    with open(save_path, mode='wb') as w:
+        w.write(File.getvalue())
 
-
+    if save_path.exists():
+        st.success(f'File {File.name} is successfully saved!')
 
 def load_image():
     """Создание формы для загрузки изображения"""
@@ -51,7 +55,6 @@ def load_image():
 
 # форма загрузки изображения
 img = load_image()
-
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -69,3 +72,5 @@ def add_bg_from_local(image_file):
     )
 
 add_bg_from_local('light.png')
+
+
