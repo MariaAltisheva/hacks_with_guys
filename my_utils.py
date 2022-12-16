@@ -1,10 +1,9 @@
 import base64
-import os
-from typing import Tuple
 
-import docx
 import streamlit as st
 from pathlib import Path
+
+
 
 
 def start():
@@ -31,12 +30,12 @@ def load_file():
 def buttom_push(File):
     """Загрузка формы подгрузки документа, на выходе получаем сам файл и булево знаение, нажата ли кнопка"""
     st.markdown("**Файл успешно загружен**")
-    save_folder = 'datas'
-    save_path = Path(save_folder, File.name)
-    with open(save_path, mode='wb') as w:
-        w.write(File.getvalue())
-    if save_path.exists():
-        st.success(f'Файл {File.name} успешно загружен')
+    # save_folder = 'datas'
+    # save_path = Path(save_folder, File.name)
+    # with open(save_path, mode='wb') as w:
+    #     w.write(File.getvalue())
+    # if save_path.exists():
+    #     st.success(f'Файл {File.name} успешно загружен')
 
 
 def add_bg_from_local(image_file):
@@ -54,27 +53,7 @@ def add_bg_from_local(image_file):
     unsafe_allow_html=True
     )
 
-def get_file_properties(fp: str) -> Tuple[float, str, str]:
-    """
-    Возвращает описание файла
-    :param fp: путь к файлу
-    :return: размер, имя и расширение файла
-    """
-    split_tup = os.path.splitext(fp)
-    file_name = split_tup[0]
-    file_extension = split_tup[1]
-    file_stats = os.stat(fp)
-    size = file_stats.st_size
-    return size, file_name, file_extension
 
-def docx_text(fp: str) -> str:
-    """
-    конвертирует файл docx в текст
-    :param fp: путь до конвертируемого файла
-    :return: текст
-    """
-    doc = docx.Document(fp)
-    full_text = []
-    for para in doc.paragraphs:
-        full_text.append(para.text)
-    return '\n'.join(full_text)
+
+
+

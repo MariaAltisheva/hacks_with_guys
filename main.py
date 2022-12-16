@@ -1,7 +1,7 @@
 import streamlit as st
 
 
-from my_utils import start, load_file, buttom_push, add_bg_from_local, get_file_properties, docx_text
+from my_utils import start, load_file, buttom_push, add_bg_from_local
 
 # Загрузка title и темы
 start()
@@ -17,5 +17,5 @@ if Recognize:
         buttom_push(File)
 
 
-st.write(docx_text(f'{File.name}'))
+
 
